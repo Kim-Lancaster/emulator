@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { QRScanner } from '../components/QRScanner';
@@ -41,7 +41,10 @@ export const ConnectionScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <QRScanner onQRCodeScanned={handleQRCodeScanned} />
+      {Platform.OS !== 'web' && <QRScanner onQRCodeScanned={handleQRCodeScanned} />}
+      {Platform.OS === 'web' && (
+        <Text style={styles.webText}>Web mode: Camera not supported. Use Test Connect.</Text>
+      )}
       <TouchableOpacity style={styles.testButton} onPress={handleTestConnect}>
         <Text style={styles.testText}>Test Connect</Text>
       </TouchableOpacity>
