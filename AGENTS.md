@@ -21,4 +21,6 @@ JavaScript (React Native), Shell (server scripts): Follow standard conventions
 - 001-mobile-terminal-access: Added JavaScript (React Native), Shell (server scripts) + React Native, react-native-webview, ttyd, tmux, qrencode, mkcert
 
 <!-- MANUAL ADDITIONS START -->
+## Development Workflow
+- **Micro-Logging and Committing**: Log and commit after every step (e.g., adding TLS, encountering issues, disabling features). This enables granular rollback and tracks incremental progress. Reference this in every session.
 <!-- MANUAL ADDITIONS END -->
