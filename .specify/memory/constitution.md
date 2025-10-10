@@ -1,50 +1,39 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: N/A → 1.0.0
+- List of modified principles: N/A (all new)
+- Added sections: Core Principles (5), Additional Constraints, Development Workflow, Governance
+- Removed sections: N/A
+- Templates requiring updates: plan-template.md (Constitution Check alignment - ✅ updated), spec-template.md (requirements alignment - ✅ updated), tasks-template.md (task categorization - ✅ updated), agent-file-template.md (no changes needed - ✅ updated)
+- Follow-up TODOs: None
+-->
+
+# Mobile Terminal App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Tool-First Design
+Every component starts with tool selection and documentation in tools-decided.md; Tools must align with project goals, be well-documented, and avoid unnecessary complexity.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Logging-Driven Development
+All development actions are logged aggressively in development-log.md; Logs track successes/failures to prevent repetition.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First Implementation
+TDD mandatory: Tests written → Approved → Fail → Implement; Red-Green-Refactor cycle enforced for reliability.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Integration and Compatibility Testing
+Focus on testing tool integrations (e.g., React Native + ttyd, tmux persistence); Ensure cross-platform compatibility and security.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simplicity and Observability
+Start simple, follow YAGNI; Use structured logging and clear error handling for debuggability.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Additional Constraints
+Technology stack: Stick to tools-decided.md; No unapproved libraries. Security: TLS for connections, no hardcoded secrets. Performance: Optimize for mobile and remote use.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+Follow logging-guide.md for all logging. Commit changes with descriptive messages; Update development-log.md post-commit. Review against constitution before merges.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Constitution supersedes all practices; Amendments require documentation and approval. After each chat compression, reference logging-guide.md and development-log.md for continuity. Use development-log.md for runtime guidance; Complexity must be justified.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-10-09 | **Last Amended**: 2025-10-09
