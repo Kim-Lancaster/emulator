@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,6 +7,7 @@ import { RootState } from '../store/store';
 import { updateSession } from '../store/sessionSlice';
 import { ConnectionService } from '../services/ConnectionService';
 import { SessionService } from '../services/SessionService';
+import { VirtualKeyboard } from '../components/VirtualKeyboard';
 
 export const TerminalScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -16,6 +17,7 @@ export const TerminalScreen: React.FC = () => {
   const activeSession = sessions.find(s => s.id === activeSessionId);
 
   const hostUrl = activeSession ? `http://localhost:7683` : 'http://localhost:7683'; // Placeholder
+  const webviewRef = useRef<WebView>(null);
 
   const handleDisconnect = async () => {
     ConnectionService.disconnect();
@@ -31,6 +33,7 @@ export const TerminalScreen: React.FC = () => {
     <View style={styles.container}>
       {Platform.OS !== 'web' ? (
         <WebView
+          ref={webviewRef}
           source={{ uri: hostUrl }}
           style={styles.webview}
           javaScriptEnabled={true}
@@ -44,6 +47,9 @@ export const TerminalScreen: React.FC = () => {
       <TouchableOpacity style={styles.disconnectButton} onPress={handleDisconnect}>
         <Text style={styles.disconnectText}>Disconnect</Text>
       </TouchableOpacity>
+      {Platform.OS !== 'web' && (
+        <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
+      )}
     </View>
   );
 };

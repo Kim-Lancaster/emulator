@@ -1,0 +1,60 @@
+import React from 'react';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+
+interface VirtualKeyboardProps {
+  onKeyPress: (script: string) => void;
+}
+
+export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) => {
+  const keys = [
+    { label: 'Esc', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', keyCode: 27, which: 27}));` },
+    { label: 'Tab', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'Tab', keyCode: 9, which: 9}));` },
+    { label: 'Ctrl+C', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'c', ctrlKey: true, keyCode: 67, which: 67}));` },
+    { label: 'Enter', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter', keyCode: 13, which: 13}));` },
+    { label: 'Backspace', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'Backspace', keyCode: 8, which: 8}));` },
+    { label: '↑', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'ArrowUp', keyCode: 38, which: 38}));` },
+    { label: '↓', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'ArrowDown', keyCode: 40, which: 40}));` },
+    { label: '←', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'ArrowLeft', keyCode: 37, which: 37}));` },
+    { label: '→', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'ArrowRight', keyCode: 39, which: 39}));` },
+    { label: 'PgUp', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'PageUp', keyCode: 33, which: 33}));` },
+    { label: 'PgDn', script: `document.dispatchEvent(new KeyboardEvent('keydown', {key: 'PageDown', keyCode: 34, which: 34}));` },
+  ];
+
+  return (
+    <View style={styles.container}>
+      {keys.map((key) => (
+        <TouchableOpacity
+          key={key.label}
+          style={styles.key}
+          onPress={() => onKeyPress(key.script)}
+        >
+          <Text style={styles.keyText}>{key.label}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    padding: 10,
+    backgroundColor: '#f0f0f0',
+  },
+  key: {
+    width: 80,
+    height: 40,
+    margin: 5,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#ccc',
+  },
+  keyText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+});
