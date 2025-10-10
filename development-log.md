@@ -22,7 +22,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-10 12:00 | 8775828 | Add TLS to server | Generated localhost cert with mkcert, updated start.sh for HTTPS on port 7683 | Success | Secure WebSocket connection enabled; temporarily disabled for testing | Enhancing security | mkcert, OpenSSL | Re-enabled HTTP for browser access.
 - 2025-10-10 12:30 | 8775828 | Implement User Story 1 | Created HostMachine model, ConnectionService with WebSocket, DiscoveryService placeholder, QRScanner component, ConnectionScreen | Success | QR scanning and connection logic ready; mDNS placeholder for future | Connecting to host terminals | React Native, vision-camera | Implemented User Story 2.
 - 2025-10-10 13:00 | 8775828 | Implement User Story 2 | Created TerminalScreen with WebView, TerminalService, AnsiRenderer, set up Redux store and navigation | Success | Command execution and output display via WebView; no failures | Running commands and viewing output | react-native-webview, Redux | Foundation complete, ready for persistence features.
-- 2025-10-10 13:30 | N/A | Document micro-committing policy | Added development workflow note to AGENTS.md for session persistence | Success | Policy documented for future reference; no failures | Ensuring consistent workflow | AGENTS.md | Ready for next steps.
+- 2025-10-10 13:30 | 91c2a15 | Document micro-committing policy | Added development workflow note to AGENTS.md for session persistence | Success | Policy documented for future reference; no failures | Ensuring consistent workflow | AGENTS.md | Ready for next steps.
+- 2025-10-10 14:00 | N/A | Create SessionService for persistence | Implemented SessionService with save/load/delete methods using StorageService | Success | Session data can be persisted across app restarts; no failures | Implementing User Story 3 | AsyncStorage | Next: Reconnection handler.
 
 ## Session Summaries
 
