@@ -10,7 +10,7 @@ This document lists the tools and technologies we've decided to use for the proj
 - **Reconnection library** (e.g., custom WebSocket wrapper or `reconnecting-websocket`): To manage connection drops with exponential backoff.
 - **Testing tools**: Jest for unit tests and Detox for end-to-end testing.
 - **Build tool**: Expo CLI for easier development, builds, and deployment.
-- **react-native-qr-scanner**: For scanning QR codes to pair with the server.
+- **react-native-vision-camera** with **vision-camera-code-scanner**: For scanning QR codes to pair with the server.
 - **Redux Toolkit**: For state management to handle global app state efficiently.
 
 ## Server
