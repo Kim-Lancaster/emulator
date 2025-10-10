@@ -10,6 +10,7 @@
 ### Session 2025-10-09
 - Q: Host Offline Behavior → A: Save session state locally and attempt automatic reconnection with backoff
 - Q: Large Output Handling → A: Warn user and allow manual clearing
+- Q: Multiple Users Handling → A: Block additional connections with an error message
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -90,7 +91,7 @@ Users should access previous output that scrolls off-screen.
 
 - If host machine goes offline during session: Save session state locally and attempt automatic reconnection with backoff.
 - For very large output that could impact performance: Warn user and allow manual clearing.
-- What if multiple users try to connect to the same host session?
+- If multiple users try to connect to the same host session: Block additional connections with an error message.
 
 ## Requirements *(mandatory)*
 
