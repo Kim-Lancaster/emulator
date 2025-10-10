@@ -34,6 +34,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-10 18:00 | 933d42b | Fix web compatibility issues | Updated react-native-webview to 13.15.0, conditionally rendered WebView on native only, removed invalid ttyd option | Success | Web app should render without CORS/WebView issues; no failures | Resolving web testing blockers | Expo, React Native | Ready for retest.
 - 2025-10-10 18:30 | 032b9d0 | Add session loading on app start | Implemented loading saved sessions from AsyncStorage on app launch | Success | Sessions persist across app restarts; no failures | Completing persistence testing | Redux, AsyncStorage | Ready for full testing.
 - 2025-10-10 18:00 | 7a0274e | Fix web rendering | Added Platform check in ConnectionScreen to skip QRScanner on web, show test button and message | Success | Web app should now render without white screen; no failures | Fixing web compatibility | React Native Platform | Retest localhost:8081.
+- 2025-10-10 19:00 | abf598e8 | Implement User Stories 4-5 and polish | Created VirtualKeyboard component with special keys (Esc, Ctrl+C, arrows, PageUp/Down), integrated with WebView via injectJavaScript; added history buffer to TerminalService; updated quickstart.md with setup instructions | Success | Virtual keyboard enables mobile input, scroll keys for history navigation; no failures | Completing core features | React Native, WebView | Project ready for final testing and deployment.
 
 ## Session Summaries
 
