@@ -1,10 +1,31 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
 import { WebView } from 'react-native-webview';
+import { RootState } from '../store/store';
+import { updateSession } from '../store/sessionSlice';
+import { ConnectionService } from '../services/ConnectionService';
+import { SessionService } from '../services/SessionService';
 
 export const TerminalScreen: React.FC = () => {
-  // TODO: Get host URL from Redux state
-  const hostUrl = 'http://localhost:7683'; // Placeholder
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const activeSessionId = useSelector((state: RootState) => state.session.activeSessionId);
+  const sessions = useSelector((state: RootState) => state.session.sessions);
+  const activeSession = sessions.find(s => s.id === activeSessionId);
+
+  const hostUrl = activeSession ? `http://localhost:7683` : 'http://localhost:7683'; // Placeholder
+
+  const handleDisconnect = async () => {
+    ConnectionService.disconnect();
+    if (activeSession) {
+      const updatedSession = { ...activeSession, status: 'disconnected' as const };
+      dispatch(updateSession(updatedSession));
+      await SessionService.saveSession(updatedSession);
+    }
+    navigation.goBack();
+  };
 
   return (
     <View style={styles.container}>
@@ -14,6 +35,9 @@ export const TerminalScreen: React.FC = () => {
         javaScriptEnabled={true}
         domStorageEnabled={true}
       />
+      <TouchableOpacity style={styles.disconnectButton} onPress={handleDisconnect}>
+        <Text style={styles.disconnectText}>Disconnect</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -24,5 +48,17 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
+  },
+  disconnectButton: {
+    position: 'absolute',
+    top: 50,
+    right: 20,
+    backgroundColor: 'red',
+    padding: 10,
+    borderRadius: 5,
+  },
+  disconnectText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });

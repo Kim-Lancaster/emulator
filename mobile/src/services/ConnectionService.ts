@@ -38,6 +38,8 @@ export class ConnectionService {
 
   disconnect(): void {
     this.reconnectionHandler?.stopReconnection();
+    // Send exit to end tmux session
+    this.send('\x04'); // Ctrl+D to exit
     if (this.ws) {
       this.ws.close();
       this.ws = null;
