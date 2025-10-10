@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { WebView } from 'react-native-webview';
@@ -29,12 +29,18 @@ export const TerminalScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <WebView
-        source={{ uri: hostUrl }}
-        style={styles.webview}
-        javaScriptEnabled={true}
-        domStorageEnabled={true}
-      />
+      {Platform.OS !== 'web' ? (
+        <WebView
+          source={{ uri: hostUrl }}
+          style={styles.webview}
+          javaScriptEnabled={true}
+          domStorageEnabled={true}
+        />
+      ) : (
+        <View style={styles.webPlaceholder}>
+          <Text>WebView not supported on web. Terminal at: {hostUrl}</Text>
+        </View>
+      )}
       <TouchableOpacity style={styles.disconnectButton} onPress={handleDisconnect}>
         <Text style={styles.disconnectText}>Disconnect</Text>
       </TouchableOpacity>
@@ -48,6 +54,11 @@ const styles = StyleSheet.create({
   },
   webview: {
     flex: 1,
+  },
+  webPlaceholder: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   disconnectButton: {
     position: 'absolute',

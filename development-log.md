@@ -31,7 +31,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-10 16:30 | 3edb792 | Plan testing for User Story 3 | Outlined testing approach: server tmux persistence via browser, mobile with dev client for full session restoration | Pending | Need dev client build for comprehensive testing; no failures yet | Preparing for validation | Expo, React Native | Next: Build dev client or proceed to US4.
 - 2025-10-10 17:00 | c8785fa | Add test connect button | Added manual connect button in ConnectionScreen for testing without QR | Success | Allows testing navigation and session state; no failures | Facilitating testing | React Native | Ready for Expo start.
 - 2025-10-10 17:30 | d200fb8 | Install web dependencies | Installed react-dom, react-native-web, react-native-reanimated for Expo web support | Success | Expo web bundling successful; no failures | Enabling web testing | Expo, npm | Web app running on localhost:8081.
-- 2025-10-10 18:00 | N/A | Fix web rendering | Added Platform check in ConnectionScreen to skip QRScanner on web, show test button and message | Success | Web app should now render without white screen; no failures | Fixing web compatibility | React Native Platform | Retest localhost:8081.
+- 2025-10-10 18:00 | N/A | Fix web compatibility issues | Updated react-native-webview to 13.15.0, conditionally rendered WebView on native only, removed invalid ttyd option | Success | Web app should render without CORS/WebView issues; no failures | Resolving web testing blockers | Expo, React Native | Ready for retest.
+- 2025-10-10 18:00 | 7a0274e | Fix web rendering | Added Platform check in ConnectionScreen to skip QRScanner on web, show test button and message | Success | Web app should now render without white screen; no failures | Fixing web compatibility | React Native Platform | Retest localhost:8081.
 
 ## Session Summaries
 
