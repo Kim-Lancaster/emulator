@@ -30,9 +30,9 @@
 **Rationale**: Simplifies development, builds, and deployment for React Native.
 **Alternatives Considered**: React Native CLI (more control, but Expo sufficient).
 
-### Decision: react-native-qr-scanner
-**Rationale**: Direct QR scanning for server pairing.
-**Alternatives Considered**: Custom camera integration (more work).
+### Decision: react-native-vision-camera with vision-camera-code-scanner
+**Rationale**: Modern, recommended QR scanning for server pairing with better performance and maintenance.
+**Alternatives Considered**: Older react-native-qr-scanner (deprecated), custom camera integration (more work).
 
 ## Server Technologies
 

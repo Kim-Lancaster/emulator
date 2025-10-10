@@ -54,7 +54,7 @@
 ### Implementation for User Story 1
 
 - [ ] T011 [US1] Create connection screen in mobile/src/screens/ConnectionScreen.js
-- [ ] T012 [US1] Implement QR scanner component in mobile/src/components/QRScanner.js
+- [ ] T012 [US1] Implement QR scanner component using react-native-vision-camera in mobile/src/components/QRScanner.js
 - [ ] T013 [US1] Add mDNS discovery service in mobile/src/services/DiscoveryService.js
 - [ ] T014 [US1] Create host machine model in mobile/src/models/HostMachine.js
 - [ ] T015 [US1] Implement connection logic in mobile/src/services/ConnectionService.js

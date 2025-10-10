@@ -14,6 +14,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-09 18:30 | N/A | Implement T005: Install server dependencies | Installed ttyd, tmux, qrencode, mkcert on system | Success | Dependencies available for server scripts; no failures | Preparing server environment | System package manager | Ready for server script creation.
 - 2025-10-09 19:00 | c4611d0 | Implement T010: Create server startup script | Created start.sh with ttyd/tmux integration, QR generation, and logging | Success | Server script executes and starts ttyd/tmux; logging implemented; qrencode installed for QR; port conflict noted but script functional | Building server foundation | Shell scripting | Tested script execution; ready for T011 logging task.
 - 2025-10-09 20:00 | 587c049 | Implement T011: Enhance server logging | Added detailed logging for tmux session creation and ttyd startup in start.sh | Success | Logging enhanced per Logging-Driven principle; no failures | Improving observability | Shell scripting | Server Phase 1 complete; ready for Phase 2 or frontend.
+- 2025-10-09 21:00 | 6441526 | Update QR scanning tool | Switched from react-native-qr-scanner to react-native-vision-camera with vision-camera-code-scanner based on repo recommendations | Success | Improved tool choice for better maintenance and performance; no failures | Following Tool-First Design | Research from reference repos | Updated tools-decided.md, research.md, tasks.md.
 
 ## Session Summaries
 
