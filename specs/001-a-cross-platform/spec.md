@@ -1,6 +1,6 @@
 # Feature Specification: A Cross-Platform Mobile Application
 
-**Feature Branch**: `feature/mobile-terminal-access`
+**Feature Branch**: `001-mobile-terminal-access`
 **Created**: 2025-10-09
 **Status**: Draft
 **Input**: User description: "A cross-platform mobile application that enables remote access to persistent terminal sessions on a host machine, facilitating tools like opencode.ai. Users can run commands, view output, and maintain sessions over local networks or VPN, with built-in virtual keyboard controls for essential keys like Esc, Ctrl+C, Tab, arrows and scrolling."
