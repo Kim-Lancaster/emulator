@@ -9,6 +9,7 @@
 
 ### Session 2025-10-09
 - Q: Host Offline Behavior → A: Save session state locally and attempt automatic reconnection with backoff
+- Q: Large Output Handling → A: Warn user and allow manual clearing
 
 ## User Scenarios & Testing *(mandatory)*
 
@@ -88,7 +89,7 @@ Users should access previous output that scrolls off-screen.
 ### Edge Cases
 
 - If host machine goes offline during session: Save session state locally and attempt automatic reconnection with backoff.
-- How does the app handle very large output that could impact performance?
+- For very large output that could impact performance: Warn user and allow manual clearing.
 - What if multiple users try to connect to the same host session?
 
 ## Requirements *(mandatory)*
