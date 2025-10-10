@@ -5,6 +5,11 @@
 **Status**: Draft
 **Input**: User description: "A cross-platform mobile application that enables remote access to persistent terminal sessions on a host machine, facilitating tools like opencode.ai. Users can run commands, view output, and maintain sessions over local networks or VPN, with built-in virtual keyboard controls for essential keys like Esc, Ctrl+C, Tab, arrows and scrolling."
 
+## Clarifications
+
+### Session 2025-10-09
+- Q: Host Offline Behavior → A: Save session state locally and attempt automatic reconnection with backoff
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Connect to Host Terminal (Priority: P1)
@@ -82,7 +87,7 @@ Users should access previous output that scrolls off-screen.
 
 ### Edge Cases
 
-- What happens if host machine goes offline during session?
+- If host machine goes offline during session: Save session state locally and attempt automatic reconnection with backoff.
 - How does the app handle very large output that could impact performance?
 - What if multiple users try to connect to the same host session?
 
