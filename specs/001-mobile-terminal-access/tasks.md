@@ -39,6 +39,7 @@
 - [ ] T008 Create base terminal session entity in mobile/src/models/
 - [ ] T009 Set up WebSocket connection service in mobile/src/services/
 - [ ] T010 Create server startup script with ttyd and tmux integration
+- [ ] T011 [P] Add logging to connection service per Logging-Driven principle
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -137,6 +138,7 @@
 - [ ] T032 [P] Performance optimization for large outputs
 - [ ] T033 Security hardening (certificate pinning, input validation)
 - [ ] T034 Update quickstart.md with final setup instructions
+- [ ] T035 Test cross-platform compatibility on iOS and Android
 
 ---
 
