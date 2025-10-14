@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
-import { QRScanner } from '../components/QRScanner';
 import { setActiveSession } from '../store/sessionSlice';
 import { TerminalSession, SessionStatus } from '../models/TerminalSession';
+
+const QRScanner = React.lazy(() =>
+  Platform.OS !== 'web'
+    ? import('../components/QRScanner').then(module => ({ default: module.QRScanner }))
+    : Promise.resolve({ default: () => null })
+);
 
 export const ConnectionScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -41,7 +46,9 @@ export const ConnectionScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      {Platform.OS !== 'web' && <QRScanner onQRCodeScanned={handleQRCodeScanned} />}
+      <Suspense fallback={<Text>Loading camera...</Text>}>
+        {Platform.OS !== 'web' && <QRScanner onQRCodeScanned={handleQRCodeScanned} />}
+      </Suspense>
       {Platform.OS === 'web' && (
         <Text style={styles.webText}>Web mode: Camera not supported. Use Test Connect.</Text>
       )}
