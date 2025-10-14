@@ -51,10 +51,10 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - **Next Steps:** Start React Native project setup with Expo CLI; create basic app structure and webview integration.
 
 ### Session 2: Expo Troubleshooting
-- **Current State:** Expo web server running stably on localhost:8081; no crashes in logs, HTTP 200 confirmed; user still reports connection refused.
-- **Completed Tasks:** Analyzed Expo repo, tested --localhost, checked logs in foreground, restarted in background.
-- **Pending Items:** User to clear browser cache/incognito or check firewall; verify app renders.
+- **Current State:** Expo web server running on localhost:8081; VisionCamera fixed with lazy loading; iframe implemented for web terminal; pushed to GitHub.
+- **Completed Tasks:** Fixed VisionCamera web crash, enabled web terminal with iframe, pushed commits.
+- **Pending Items:** Test iframe terminal functionality in browser.
 - **Conventions:** Follow logging guide for all actions; commit log updates immediately.
-- **Next Steps:** If browser access works, proceed to full app testing; else, investigate firewall or network.</content>
+- **Next Steps:** User to test terminal interaction via iframe; if successful, app is fully web-compatible.</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
