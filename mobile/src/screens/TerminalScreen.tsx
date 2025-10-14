@@ -40,9 +40,11 @@ export const TerminalScreen: React.FC = () => {
           domStorageEnabled={true}
         />
       ) : (
-        <View style={styles.webPlaceholder}>
-          <Text>WebView not supported on web. Terminal at: {hostUrl}</Text>
-        </View>
+        <iframe
+          src={hostUrl}
+          style={{ flex: 1, border: 'none' }}
+          title="Terminal"
+        />
       )}
       <TouchableOpacity style={styles.disconnectButton} onPress={handleDisconnect}>
         <Text style={styles.disconnectText}>Disconnect</Text>
