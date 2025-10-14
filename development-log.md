@@ -39,7 +39,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-14 20:15 | a5a46abb | Restart Expo web server in background | Ran npx expo start --web --localhost --port 8081 & to persist server; confirmed process running, port listening, HTTP 200 response | Success | Server now stable in background; no more connection refused | Fixing server persistence issue | Expo CLI | User to test browser access.
 - 2025-10-14 20:20 | 2e551d26 | Troubleshoot Expo logs | Ran Expo in foreground to check for crashes; no errors, bundling successful; restarted in background, confirmed HTTP 200 | Success | Server starts without issues; user reports connection refused possibly due to browser cache or firewall | Identifying log causes | Expo CLI | Clear browser cache or try incognito; if persists, check firewall.
 - 2025-10-14 20:30 | 4dec384a | Fix VisionCamera web error | Identified VisionCamera import causing web crash; implemented lazy loading for QRScanner on native only with Suspense | Success | Prevented web import errors; app renders and navigates correctly | Fixing web rendering issue | React Native | Proceed to enable web terminal with iframe.
-- 2025-10-14 20:35 | 9c5c7bbc | Enable web terminal with iframe | Replaced WebView placeholder with iframe on web to embed ttyd terminal interface | Pending | Should allow full terminal interaction in browser | Completing web compatibility | HTML iframe | Test terminal functionality after restart.
+- 2025-10-14 20:35 | 9c5c7bbc | Enable web terminal with iframe | Replaced WebView placeholder with iframe on web to embed ttyd terminal interface | Success | Allows full terminal interaction in browser; scroll wheel/arrow keys navigate command history instead of page scroll, but acceptable since browser not for final app | Completing web compatibility | HTML iframe | Web terminal functional; proceed to mobile testing.
+- 2025-10-14 21:00 | N/A | Test iframe terminal functionality | Started ttyd server on port 7683, ran Expo web on localhost:8081, verified iframe renders and allows command input/output | Success | Terminal fully interactive; disconnect button non-functional on web (expected, as it's app-specific) | Validating web implementation | ttyd, Expo | Skip browser scroll fix; move to mobile testing.
 
 ## Session Summaries
 
@@ -52,9 +53,16 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 
 ### Session 2: Expo Troubleshooting
 - **Current State:** Expo web server running on localhost:8081; VisionCamera fixed with lazy loading; iframe implemented for web terminal; pushed to GitHub.
-- **Completed Tasks:** Fixed VisionCamera web crash, enabled web terminal with iframe, pushed commits.
-- **Pending Items:** Test iframe terminal functionality in browser.
+- **Completed Tasks:** Fixed VisionCamera web crash, enabled web terminal with iframe, tested functionality - works for interaction.
+- **Pending Items:** Test on mobile platform.
 - **Conventions:** Follow logging guide for all actions; commit log updates immediately.
-- **Next Steps:** User to test terminal interaction via iframe; if successful, app is fully web-compatible.</content>
+- **Next Steps:** Test WebView and VirtualKeyboard on mobile; ensure cross-platform compatibility.
+
+### Session 3: Security Fix and Web Validation
+- **Current State:** Git history rewritten to remove exposed API key; SSL certificates removed; web terminal validated; ready for mobile testing.
+- **Completed Tasks:** Rewrote git history with git-filter-repo, removed sensitive files, tested iframe terminal - functional.
+- **Pending Items:** Mobile testing, cross-platform validation, deployment prep.
+- **Conventions:** Aggressive logging; commit after changes; follow logging guide.
+- **Next Steps:** Test on iOS/Android via Expo dev client; update quickstart; finalize app.</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
