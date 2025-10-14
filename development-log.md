@@ -41,6 +41,9 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-14 20:30 | 4dec384a | Fix VisionCamera web error | Identified VisionCamera import causing web crash; implemented lazy loading for QRScanner on native only with Suspense | Success | Prevented web import errors; app renders and navigates correctly | Fixing web rendering issue | React Native | Proceed to enable web terminal with iframe.
 - 2025-10-14 20:35 | 9c5c7bbc | Enable web terminal with iframe | Replaced WebView placeholder with iframe on web to embed ttyd terminal interface | Success | Allows full terminal interaction in browser; scroll wheel/arrow keys navigate command history instead of page scroll, but acceptable since browser not for final app | Completing web compatibility | HTML iframe | Web terminal functional; proceed to mobile testing.
 - 2025-10-14 21:00 | N/A | Test iframe terminal functionality | Started ttyd server on port 7683, ran Expo web on localhost:8081, verified iframe renders and allows command input/output | Success | Terminal fully interactive; disconnect button non-functional on web (expected, as it's app-specific) | Validating web implementation | ttyd, Expo | Skip browser scroll fix; move to mobile testing.
+- 2025-10-14 21:30 | N/A | Set up Android device for testing | Verified USB debugging enabled, device connected via ADB (ce091719ad017726027e), downloaded and installed Expo Go APK | Success | Device ready for app testing; no failures | Preparing mobile testing environment | ADB, APK download | Proceed to launch app on device.
+- 2025-10-14 22:00 | N/A | Troubleshoot mobile app launch | Encountered "Failed to download remote update" error in Expo Go; attempted ADB reverse tunnels for ports 8081/8083, allowed firewall ports, updated app URL to localhost | Partial | Tunnels active, firewall open, but download still fails; likely tunnel/network issue | Debugging Expo Go connectivity | ADB reverse, firewall | Switch to Wi-Fi or manual APK build.
+- 2025-10-14 22:15 | N/A | Install EAS CLI for APK build | Installed EAS CLI globally via npm | Success | Ready for cloud APK build; no failures | Preparing manual APK transfer | npm, EAS | Proceed with EAS login and build.
 
 ## Session Summaries
 
@@ -59,10 +62,10 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - **Next Steps:** Test WebView and VirtualKeyboard on mobile; ensure cross-platform compatibility.
 
 ### Session 3: Security Fix and Web Validation
-- **Current State:** Git history rewritten to remove exposed API key; SSL certificates removed; web terminal validated; ready for mobile testing.
-- **Completed Tasks:** Rewrote git history with git-filter-repo, removed sensitive files, tested iframe terminal - functional.
-- **Pending Items:** Mobile testing, cross-platform validation, deployment prep.
+- **Current State:** Git history rewritten to remove exposed API key; SSL certificates removed; web terminal validated; mobile testing attempted but Expo Go connectivity issues.
+- **Completed Tasks:** Rewrote git history with git-filter-repo, removed sensitive files, tested iframe terminal - functional, set up Android device, attempted Expo Go launch.
+- **Pending Items:** Resolve Expo Go download error, complete mobile testing, cross-platform validation, deployment prep.
 - **Conventions:** Aggressive logging; commit after changes; follow logging guide.
-- **Next Steps:** Test on iOS/Android via Expo dev client; update quickstart; finalize app.</content>
+- **Next Steps:** Use EAS for APK build and manual install; test on device; update quickstart; finalize app.</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
