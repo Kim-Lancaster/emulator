@@ -35,6 +35,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-10 18:30 | 032b9d0 | Add session loading on app start | Implemented loading saved sessions from AsyncStorage on app launch | Success | Sessions persist across app restarts; no failures | Completing persistence testing | Redux, AsyncStorage | Ready for full testing.
 - 2025-10-10 18:00 | 7a0274e | Fix web rendering | Added Platform check in ConnectionScreen to skip QRScanner on web, show test button and message | Success | Web app should now render without white screen; no failures | Fixing web compatibility | React Native Platform | Retest localhost:8081.
 - 2025-10-10 19:00 | abf598e8 | Implement User Stories 4-5 and polish | Created VirtualKeyboard component with special keys (Esc, Ctrl+C, arrows, PageUp/Down), integrated with WebView via injectJavaScript; added history buffer to TerminalService; updated quickstart.md with setup instructions | Success | Virtual keyboard enables mobile input, scroll keys for history navigation; no failures | Completing core features | React Native, WebView | Project ready for final testing and deployment.
+- 2025-10-14 20:00 | N/A | Test Expo web server with --localhost | Ran npx expo start --web --localhost --port 8081 to serve on localhost only, avoiding LAN issues | Success | Server started successfully on http://localhost:8081; no connection refused errors | Troubleshooting Expo web instability | Expo CLI | Verify app loads in browser without white screen.
 
 ## Session Summaries
 
