@@ -35,7 +35,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-10 18:30 | 032b9d0 | Add session loading on app start | Implemented loading saved sessions from AsyncStorage on app launch | Success | Sessions persist across app restarts; no failures | Completing persistence testing | Redux, AsyncStorage | Ready for full testing.
 - 2025-10-10 18:00 | 7a0274e | Fix web rendering | Added Platform check in ConnectionScreen to skip QRScanner on web, show test button and message | Success | Web app should now render without white screen; no failures | Fixing web compatibility | React Native Platform | Retest localhost:8081.
 - 2025-10-10 19:00 | abf598e8 | Implement User Stories 4-5 and polish | Created VirtualKeyboard component with special keys (Esc, Ctrl+C, arrows, PageUp/Down), integrated with WebView via injectJavaScript; added history buffer to TerminalService; updated quickstart.md with setup instructions | Success | Virtual keyboard enables mobile input, scroll keys for history navigation; no failures | Completing core features | React Native, WebView | Project ready for final testing and deployment.
-- 2025-10-14 20:00 | N/A | Test Expo web server with --localhost | Ran npx expo start --web --localhost --port 8081 to serve on localhost only, avoiding LAN issues | Success | Server started successfully on http://localhost:8081; no connection refused errors | Troubleshooting Expo web instability | Expo CLI | Verify app loads in browser without white screen.
+- 2025-10-14 20:00 | 896016da | Test Expo web server with --localhost | Ran npx expo start --web --localhost --port 8081 to serve on localhost only, avoiding LAN issues | Success | Server started successfully on http://localhost:8081; no connection refused errors | Troubleshooting Expo web instability | Expo CLI | Verify app loads in browser without white screen.
 
 ## Session Summaries
 
@@ -44,6 +44,13 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - **Completed Tasks:** Evaluated and selected tools for frontend (React Native, etc.), server (ttyd, tmux), networking (mDNS, WireGuard), and other (ESLint); created frontend-directions.md for reference; set up Git and GitHub.
 - **Pending Items:** Implement React Native app structure, set up server CLI with ttyd and tmux.
 - **Conventions:** Use aggressive logging in development-log.md; commit changes with descriptive messages; follow tools-decided.md for tech choices.
-- **Next Steps:** Start React Native project setup with Expo CLI; create basic app structure and webview integration.</content>
+- **Next Steps:** Start React Native project setup with Expo CLI; create basic app structure and webview integration.
+
+### Session 2: Expo Troubleshooting
+- **Current State:** Expo web server tested successfully with --localhost flag; app loads on http://localhost:8081 without connection refused errors.
+- **Completed Tasks:** Analyzed Expo repo for solutions, tested --localhost flag to resolve LAN instability.
+- **Pending Items:** Verify app renders correctly in browser (no white screen), test full functionality.
+- **Conventions:** Follow logging guide for all actions; commit log updates immediately.
+- **Next Steps:** User to confirm browser rendering; proceed to full testing if successful.</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
