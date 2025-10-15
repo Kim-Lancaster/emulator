@@ -44,6 +44,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-14 21:30 | N/A | Set up Android device for testing | Verified USB debugging enabled, device connected via ADB (ce091719ad017726027e), downloaded and installed Expo Go APK | Success | Device ready for app testing; no failures | Preparing mobile testing environment | ADB, APK download | Proceed to launch app on device.
 - 2025-10-14 22:00 | N/A | Troubleshoot mobile app launch | Encountered "Failed to download remote update" error in Expo Go; attempted ADB reverse tunnels for ports 8081/8083, allowed firewall ports, updated app URL to localhost | Partial | Tunnels active, firewall open, but download still fails; likely tunnel/network issue | Debugging Expo Go connectivity | ADB reverse, firewall | Switch to Wi-Fi or manual APK build.
 - 2025-10-14 22:15 | N/A | Install EAS CLI for APK build | Installed EAS CLI globally via npm | Success | Ready for cloud APK build; no failures | Preparing manual APK transfer | npm, EAS | Proceed with EAS login and build.
+- 2025-10-14 22:30 | N/A | User installs EAS CLI | User running `npm install -g @expo/eas-cli` and will login | Pending | For records; user handling login | Preparing for APK build | npm, Expo account | Await user confirmation for build.
 
 ## Session Summaries
 
