@@ -1,0 +1,244 @@
+symbol:   class Barcode
+  location: package com.google.mlkit.vision.barcode
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:25: error: package com.mrousavy.camera.frameprocessor does not exist
+import com.mrousavy.camera.frameprocessor.FrameProcessorPlugin;
+                                         ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:27: error: cannot find symbol
+import com.google.mlkit.vision.barcode.Barcode;
+                                      ^
+  symbol:   class Barcode
+  location: package com.google.mlkit.vision.barcode
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:40: error: cannot find symbol
+public class VisionCameraCodeScannerPlugin extends FrameProcessorPlugin {
+^
+  symbol: class FrameProcessorPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:147: error: cannot find symbol
+  private WritableNativeMap convertContent(@NonNull Barcode barcode) {
+                                                    ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:191: error: cannot find symbol
+  private WritableNativeMap convertBarcode(@NonNull Barcode barcode) {
+                                                    ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:49: error: package Barcode does not exist
+  public static WritableNativeArray convertAddressList(@NonNull List<Barcode.Address> addresses) {
+                                                                            ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:59: error: package Barcode does not exist
+  public static WritableNativeArray convertPhoneList(@NonNull List<Barcode.Phone> phones) {
+                                                                          ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:69: error: package Barcode does not exist
+  public static WritableNativeArray convertEmailList(@NonNull List<Barcode.Email> emails) {
+                                                                          ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:88: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.Address address) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:108: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.ContactInfo contactInfo) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:122: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.PersonName name) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:136: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.UrlBookmark url) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:145: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.Email email) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:156: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.Phone phone) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:165: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.Sms sms) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:174: error: package Barcode does not exist
+public static WritableNativeMap convertToMap(@NonNull Barcode.WiFi wifi) {
+^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:184: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.GeoPoint geoPoint) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:193: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.CalendarDateTime calendarDateTime) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:208: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.CalendarEvent calendarEvent) {
+                                                               ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:222: error: package Barcode does not exist
+  public static WritableNativeMap convertToMap(@NonNull Barcode.DriverLicense driverLicense) {
+                                                               ^
+> Task :app:collectReleaseDependencies
+> Task :app:sdkReleaseDependencyData
+> Task :app:validateSigningRelease
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :vision-camera-code-scanner:compileReleaseJavaWithJavac FAILED
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPluginPackage.java:19: error: cannot find symbol
+    FrameProcessorPlugin.register(new VisionCameraCodeScannerPlugin());
+    ^
+  symbol:   variable FrameProcessorPlugin
+  location: class VisionCameraCodeScannerPluginPackage
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:23: error: reference to convertToMap is ambiguous
+      array.pushMap(convertToMap(point));
+                    ^
+  both method convertToMap(CalendarEvent) in BarcodeConverter and method convertToMap(DriverLicense) in BarcodeConverter match
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:52: error: package Barcode does not exist
+    for (Barcode.Address address: addresses) {
+                ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:62: error: package Barcode does not exist
+    for (Barcode.Phone phone: phones) {
+                ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/BarcodeConverter.java:72: error: package Barcode does not exist
+    for (Barcode.Email email: emails) {
+                ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:45: error: cannot find symbol
+    Barcode.FORMAT_UNKNOWN,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:46: error: cannot find symbol
+    Barcode.FORMAT_ALL_FORMATS,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:47: error: cannot find symbol
+    Barcode.FORMAT_CODE_128,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:48: error: cannot find symbol
+    Barcode.FORMAT_CODE_39,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:49: error: cannot find symbol
+    Barcode.FORMAT_CODE_93,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:50: error: cannot find symbol
+Barcode.FORMAT_CODABAR,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:51: error: cannot find symbol
+    Barcode.FORMAT_DATA_MATRIX,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:52: error: cannot find symbol
+    Barcode.FORMAT_EAN_13,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:53: error: cannot find symbol
+    Barcode.FORMAT_EAN_8,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:54: error: cannot find symbol
+    Barcode.FORMAT_ITF,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:55: error: cannot find symbol
+    Barcode.FORMAT_QR_CODE,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:56: error: cannot find symbol
+    Barcode.FORMAT_UPC_A,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:57: error: cannot find symbol
+    Barcode.FORMAT_UPC_E,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:58: error: cannot find symbol
+    Barcode.FORMAT_PDF417,
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:59: error: cannot find symbol
+    Barcode.FORMAT_AZTEC
+    ^
+  symbol:   variable Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:62: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:69: error: cannot find symbol
+      ArrayList<Task<List<Barcode>>> tasks = new ArrayList<Task<List<Barcode>>>();
+                          ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:69: error: cannot find symbol
+      ArrayList<Task<List<Barcode>>> tasks = new ArrayList<Task<List<Barcode>>>();
+                                                                     ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:93: error: cannot find symbol
+        ArrayList<Barcode> barcodes = new ArrayList<Barcode>();
+                  ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:93: error: cannot find symbol
+        ArrayList<Barcode> barcodes = new ArrayList<Barcode>();
+                                                    ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:94: error: cannot find symbol
+        for (Task<List<Barcode>> task : tasks) {
+                       ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:99: error: cannot find symbol
+        for (Barcode barcode : barcodes) {
+             ^
+  symbol:   class Barcode
+  location: class VisionCameraCodeScannerPlugin
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:154: error: package Barcode does not exist
+      case Barcode.TYPE_UNKNOWN:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:155: error: package Barcode does not exist
+      case Barcode.TYPE_ISBN:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:156: error: package Barcode does not exist
+      case Barcode.TYPE_TEXT:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:159: error: package Barcode does not exist
+      case Barcode.TYPE_CONTACT_INFO:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:162: error: package Barcode does not exist
+      case Barcode.TYPE_EMAIL:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:165: error: package Barcode does not exist
+      case Barcode.TYPE_PHONE:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:168: error: package Barcode does not exist
+      case Barcode.TYPE_SMS:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:171: error: package Barcode does not exist
+      case Barcode.TYPE_URL:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:174: error: package Barcode does not exist
+      case Barcode.TYPE_WIFI:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:177: error: package Barcode does not exist
+      case Barcode.TYPE_GEO:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:180: error: package Barcode does not exist
+      case Barcode.TYPE_CALENDAR_EVENT:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:183: error: package Barcode does not exist
+      case Barcode.TYPE_DRIVER_LICENSE:
+                  ^
+/home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPlugin.java:196: error: reference to convertToMap is ambiguous
+      map.putMap("boundingBox", convertToMap(boundingBox));
+                                ^
+  both method convertToMap(ContactInfo) in BarcodeConverter and method convertToMap(Address) in BarcodeConverter match
+Note: /home/expo/workingdir/build/mobile/node_modules/vision-camera-code-scanner/android/src/main/java/com/visioncameracodescanner/VisionCameraCodeScannerPluginPackage.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+62 errors

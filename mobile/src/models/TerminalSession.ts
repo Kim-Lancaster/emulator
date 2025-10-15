@@ -7,6 +7,7 @@ export enum SessionStatus {
 export interface TerminalSession {
   id: string;
   hostId: string;
+  hostUrl: string;
   status: SessionStatus;
   history: string[];
   createdAt: Date;

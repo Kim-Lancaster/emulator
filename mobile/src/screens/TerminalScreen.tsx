@@ -16,7 +16,7 @@ export const TerminalScreen: React.FC = () => {
   const sessions = useSelector((state: RootState) => state.session.sessions);
   const activeSession = sessions.find(s => s.id === activeSessionId);
 
-  const hostUrl = activeSession ? `http://localhost:7683` : 'http://localhost:7683'; // Placeholder
+  const hostUrl = activeSession?.hostUrl || 'https://localhost:8083';
   const webviewRef = useRef<WebView>(null);
 
   const handleDisconnect = async () => {
@@ -38,6 +38,7 @@ export const TerminalScreen: React.FC = () => {
           style={styles.webview}
           javaScriptEnabled={true}
           domStorageEnabled={true}
+          ignoreSslError={true}
         />
       ) : (
         <iframe

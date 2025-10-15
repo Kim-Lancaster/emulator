@@ -46,6 +46,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-14 22:15 | cacd106 | Install EAS CLI for APK build | Installed EAS CLI globally via npm | Success | Ready for cloud APK build; no failures | Preparing manual APK transfer | npm, EAS | Proceed with EAS login and build.
 - 2025-10-14 22:30 | d82e8e0 | Install EAS CLI | Installed eas-cli globally via npm | Success | Ready for login and build; no failures | Preparing for APK build | npm, Expo account | Proceed with login.
 - 2025-10-14 22:45 | 03165cc | Add Node.js to PATH | Added Node.js bin to ~/.bashrc for global access | Success | npm, node, npx now available without full paths; no failures | Improving development workflow | Shell configuration | Ready for EAS commands.
+- 2025-10-15 10:00 | N/A | Remove QR scanner dependencies | Removed react-native-vision-camera plugin from app.json to fix EAS build conflicts | Success | Plugin removed; no failures | Resolving build issues | EAS, React Native | Updated ConnectionScreen for manual server input.
+- 2025-10-15 10:15 | N/A | Update UI for manual server connection | Replaced QRScanner with TextInput in ConnectionScreen, added hostUrl to TerminalSession model, updated TerminalScreen to use dynamic URL | Success | Manual input UI ready; no failures | Simplifying connection for testing | React Native | Ready to retry EAS build.
 
 ## Session Summaries
 
