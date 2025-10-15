@@ -50,6 +50,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-15 10:15 | 612069c | Update UI for manual server connection | Replaced QRScanner with TextInput in ConnectionScreen, added hostUrl to TerminalSession model, updated TerminalScreen to use dynamic URL | Success | Manual input UI ready; no failures | Simplifying connection for testing | React Native | Ready to retry EAS build.
 - 2025-10-15 11:00 | 0252c7d | Re-enable TLS for secure terminal access | Regenerated SSL certs for localhost and LAN IP using mkcert, updated server script to HTTPS with cert paths, modified app screens to use HTTPS URLs and ignoreSslError for self-signed certs | Success | TLS configured for encrypted traffic; no failures | Enhancing security for terminal access | mkcert, ttyd, React Native WebView | Ready for APK rebuild and testing.
 - 2025-10-15 12:00 | N/A | Local APK build with Expo | Executed npx expo run:android, built debug APK locally and installed on connected Android device | Success | Build completed without errors, APK installed; no failures | Successful local build alternative to EAS | Expo CLI, Android SDK, JDK | Ready for HTTPS terminal testing.
+- 2025-10-15 13:00 | N/A | Verify server and app readiness | Confirmed HTTPS ttyd server running on port 8083; app "mobile" installed on device | Success | Server active, app ready; no failures | Preparing for user testing | ttyd, ADB | User to test HTTPS connection in app.
 
 ## Session Summaries
 
