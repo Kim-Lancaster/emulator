@@ -42,6 +42,7 @@ Thumbs.db
 .expo/
 ios/
 android/
+*.apk
 
 # Other
 npm-debug.log*
