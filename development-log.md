@@ -46,8 +46,9 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-14 22:15 | cacd106 | Install EAS CLI for APK build | Installed EAS CLI globally via npm | Success | Ready for cloud APK build; no failures | Preparing manual APK transfer | npm, EAS | Proceed with EAS login and build.
 - 2025-10-14 22:30 | d82e8e0 | Install EAS CLI | Installed eas-cli globally via npm | Success | Ready for login and build; no failures | Preparing for APK build | npm, Expo account | Proceed with login.
 - 2025-10-14 22:45 | 03165cc | Add Node.js to PATH | Added Node.js bin to ~/.bashrc for global access | Success | npm, node, npx now available without full paths; no failures | Improving development workflow | Shell configuration | Ready for EAS commands.
-- 2025-10-15 10:00 | N/A | Remove QR scanner dependencies | Removed react-native-vision-camera plugin from app.json to fix EAS build conflicts | Success | Plugin removed; no failures | Resolving build issues | EAS, React Native | Updated ConnectionScreen for manual server input.
-- 2025-10-15 10:15 | N/A | Update UI for manual server connection | Replaced QRScanner with TextInput in ConnectionScreen, added hostUrl to TerminalSession model, updated TerminalScreen to use dynamic URL | Success | Manual input UI ready; no failures | Simplifying connection for testing | React Native | Ready to retry EAS build.
+- 2025-10-15 10:00 | 612069c | Remove QR scanner dependencies | Removed react-native-vision-camera plugin from app.json to fix EAS build conflicts | Success | Plugin removed; no failures | Resolving build issues | EAS, React Native | Updated ConnectionScreen for manual server input.
+- 2025-10-15 10:15 | 612069c | Update UI for manual server connection | Replaced QRScanner with TextInput in ConnectionScreen, added hostUrl to TerminalSession model, updated TerminalScreen to use dynamic URL | Success | Manual input UI ready; no failures | Simplifying connection for testing | React Native | Ready to retry EAS build.
+- 2025-10-15 11:00 | 0252c7d | Re-enable TLS for secure terminal access | Regenerated SSL certs for localhost and LAN IP using mkcert, updated server script to HTTPS with cert paths, modified app screens to use HTTPS URLs and ignoreSslError for self-signed certs | Success | TLS configured for encrypted traffic; no failures | Enhancing security for terminal access | mkcert, ttyd, React Native WebView | Ready for APK rebuild and testing.
 
 ## Session Summaries
 
@@ -70,6 +71,13 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - **Completed Tasks:** Rewrote git history with git-filter-repo, removed sensitive files, tested iframe terminal - functional, set up Android device, attempted Expo Go launch.
 - **Pending Items:** Resolve Expo Go download error, complete mobile testing, cross-platform validation, deployment prep.
 - **Conventions:** Aggressive logging; commit after changes; follow logging guide.
-- **Next Steps:** Use EAS for APK build and manual install; test on device; update quickstart; finalize app.</content>
+- **Next Steps:** Use EAS for APK build and manual install; test on device; update quickstart; finalize app.
+
+### Session 4: TLS Re-enablement and Local Build Planning
+- **Current State:** TLS re-enabled with self-signed certs; EAS build queued (free tier); planned local build alternative.
+- **Completed Tasks:** Regenerated SSL certs, updated server to HTTPS, app to HTTPS URLs with SSL error handling; committed changes.
+- **Pending Items:** Verify Android SDK/JDK for local build; execute `npx expo run:android --device`; test HTTPS terminal on device.
+- **Conventions:** Aggressive logging; commit after changes; prioritize security.
+- **Next Steps:** Inspect SDK/JDK availability; proceed with local APK build; test secure connection; log results.</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
