@@ -60,6 +60,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
  - 2025-10-15 16:20 | N/A | Switch to HTTP for testing | Modified start.sh to remove -S -C -K, changed ConnectionScreen.tsx and TerminalScreen.tsx to use http://, removed ignoreSslError | Success | App updated for HTTP testing; no syntax errors | Debugging connection issue | Ready to start HTTP server.
  - 2025-10-15 16:25 | N/A | Attempt HTTP server start | Ran start.sh; ttyd failed with binding error (-1 98 EADDRINUSE) on 8083 | Partial | Port appears in use but ss shows no listener; ttyd exits after error | Investigating binding failure | Changed port to 8084 in start.sh and app.
  - 2025-10-15 16:30 | N/A | Retry HTTP server on 8084 | Ran start.sh; same binding error on 8084 | Failure | Consistent binding failure despite no visible listener | Root cause: invalid -i 0.0.0.0 option | Plan: Remove -i option, default binds to all interfaces.
+ - 2025-10-15 16:35 | de5dd5c | Switch to HTTP for testing | Committed changes: updated start.sh to HTTP, ConnectionScreen.tsx and TerminalScreen.tsx to http:// URLs on port 3000 | Success | Code changes for HTTP testing committed | Preparing for server start and APK rebuild | Ready to push and test.
 
 ## Session Summaries
 
