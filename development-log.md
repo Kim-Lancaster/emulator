@@ -45,6 +45,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-14 22:00 | N/A | Troubleshoot mobile app launch | Encountered "Failed to download remote update" error in Expo Go; attempted ADB reverse tunnels for ports 8081/8083, allowed firewall ports, updated app URL to localhost | Partial | Tunnels active, firewall open, but download still fails; likely tunnel/network issue | Debugging Expo Go connectivity | ADB reverse, firewall | Switch to Wi-Fi or manual APK build.
 - 2025-10-14 22:15 | N/A | Install EAS CLI for APK build | Installed EAS CLI globally via npm | Success | Ready for cloud APK build; no failures | Preparing manual APK transfer | npm, EAS | Proceed with EAS login and build.
 - 2025-10-14 22:30 | N/A | User installs EAS CLI | User running `npm install -g @expo/eas-cli` and will login | Pending | For records; user handling login | Preparing for APK build | npm, Expo account | Await user confirmation for build.
+- 2025-10-14 22:45 | N/A | Add Node.js to PATH | Added Node.js bin to ~/.bashrc for global access | Success | npm, node, npx now available without full paths; no failures | Improving development workflow | Shell configuration | Ready for EAS commands.
 
 ## Session Summaries
 
