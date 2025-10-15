@@ -39,6 +39,14 @@ export const TerminalScreen: React.FC = () => {
           javaScriptEnabled={true}
           domStorageEnabled={true}
           ignoreSslError={true}
+          onError={(syntheticEvent) => {
+            const { nativeEvent } = syntheticEvent;
+            console.warn('WebView error: ', nativeEvent);
+          }}
+          onHttpError={(syntheticEvent) => {
+            const { nativeEvent } = syntheticEvent;
+            console.warn('WebView HTTP error: ', nativeEvent);
+          }}
         />
       ) : (
         <iframe

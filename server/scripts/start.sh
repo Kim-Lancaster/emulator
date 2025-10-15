@@ -9,7 +9,7 @@ PORT=8083
 CERT_PATH="/home/kimdev/Documents/emulator/localhost+1.pem"
 KEY_PATH="/home/kimdev/Documents/emulator/localhost+1-key.pem"
 echo "$(date): Starting ttyd on port $PORT with bash over HTTPS" >> ../logs/startup.log
-ttyd -C $CERT_PATH -K $KEY_PATH -i 0.0.0.0 -p $PORT bash &
+ttyd -S -C $CERT_PATH -K $KEY_PATH -i 0.0.0.0 -p $PORT bash &
 TTYD_PID=$!
 
 echo "Server started on port $PORT"
