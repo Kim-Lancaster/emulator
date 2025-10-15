@@ -56,6 +56,10 @@ This log tracks all actions, changes, and outcomes during development. Format: T
  - 2025-10-15 16:00 | N/A | Troubleshoot connection refused | App loads but ERR_CONNECTION_REFUSED on connect; server running on host, accessible via curl | In Progress | Device cannot reach host IP 10.222.3.71:8083; possible network issue (Wi-Fi vs mobile data) | Network connectivity | User to verify device on same LAN Wi-Fi.
  - 2025-10-15 16:05 | N/A | Add WebView error logging | Added onError and onHttpError handlers to WebView in TerminalScreen.tsx for detailed error logging | Success | Error handlers added to capture WebView connection issues | Debugging ERR_CONNECTION_REFUSED | Rebuild APK and test.
  - 2025-10-15 16:10 | N/A | Rebuild APK with error logging | Executed expo run:android, built and installed debug APK on SM_N950U device | Success | APK installed successfully; no build errors | Testing WebView error logging | User to test app and check logs for ERR_CONNECTION_REFUSED details.
+ - 2025-10-15 16:15 | N/A | Debug ttyd SSL startup | Ran ttyd -d 0 -S -C cert.pem -K key.pem -i 0.0.0.0 -p 8083 bash; started successfully, listening on 0.0.0.0:8083 | Success | Server runs fine with SSL; no startup errors | Isolating ERR_CONNECTION_REFUSED cause | Confirmed SSL server functional.
+ - 2025-10-15 16:20 | N/A | Switch to HTTP for testing | Modified start.sh to remove -S -C -K, changed ConnectionScreen.tsx and TerminalScreen.tsx to use http://, removed ignoreSslError | Success | App updated for HTTP testing; no syntax errors | Debugging connection issue | Ready to start HTTP server.
+ - 2025-10-15 16:25 | N/A | Attempt HTTP server start | Ran start.sh; ttyd failed with binding error (-1 98 EADDRINUSE) on 8083 | Partial | Port appears in use but ss shows no listener; ttyd exits after error | Investigating binding failure | Changed port to 8084 in start.sh and app.
+ - 2025-10-15 16:30 | N/A | Retry HTTP server on 8084 | Ran start.sh; same binding error on 8084 | Failure | Consistent binding failure despite no visible listener | Root cause: invalid -i 0.0.0.0 option | Plan: Remove -i option, default binds to all interfaces.
 
 ## Session Summaries
 
