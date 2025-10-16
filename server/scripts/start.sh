@@ -5,9 +5,9 @@
 
 PORT=3000
 
-# Start ttyd with bash over HTTP (temporarily disabled TLS for testing)
+# Start ttyd with bash over HTTP (no TLS for testing)
 echo "$(date): Starting ttyd on port $PORT with bash over HTTP" >> ../logs/startup.log
-ttyd -i wlp59s0 -p $PORT bash &
+ttyd -p $PORT bash &
 TTYD_PID=$!
 
 echo "Server started on port $PORT"
