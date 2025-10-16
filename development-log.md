@@ -72,7 +72,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 11:15 | 749c72e | Launch Android emulator for testing | Ran expo run:android, build successful in 3m 25s, APK installed and app opened on 'test' emulator | Success | Emulator launched, app ready for connection test to https://localhost:8888 | Emulator testing | Expo CLI | User to test non-root terminal access.
 - 2025-10-16 11:30 | d7da378 | Update app for emulator networking | Changed ConnectionScreen.tsx default URL to 10.0.2.2:8888, rebuilt APK in 6s, installed on 'test' emulator | Success | APK updated for emulator host access | Networking fix | React Native | Ready for connection test.
 - 2025-10-16 13:30 | 1691cc3 | Clean up ttyd processes | Killed ttyd PIDs 1983783 (3000), 1983645 (8080), 1983597 (8888); ports now free | Success | Freed ports for new server start | Process cleanup | lsof, kill | Ready for user to start server.
-- 2025-10-16 14:00 | N/A | Test emulator connections and ADB reverse | Tried 10.222.3.71:3000 (ERR_CONNECTION_REFUSED), set up ADB reverse tcp:3000 tcp:3000, tested localhost:3000 (still refused), confirmed tunnels active with adb reverse --list | Failure | Tunnel set up but connection refused in app; server running, host access works | Emulator network isolation | ADB reverse, WebView | Likely WebView blocking or tunnel not effective in app.
+- 2025-10-16 14:00 | 9735a50 | Test emulator connections and ADB reverse | Tried 10.222.3.71:3000 (ERR_CONNECTION_REFUSED), set up ADB reverse tcp:3000 tcp:3000, tested localhost:3000 (still refused), confirmed tunnels active with adb reverse --list | Failure | Tunnel set up but connection refused in app; server running, host access works | Emulator network isolation | ADB reverse, WebView | Likely WebView blocking or tunnel not effective in app.
+- 2025-10-16 15:00 | 3d3eefc | Fix app connection settings for emulator | Updated ConnectionScreen.tsx default to 10.0.2.2:3000, changed hostUrl to http://, updated placeholder; updated TerminalScreen.tsx fallback to http://localhost:3000; rebuilt APK with npm run android | Success | App now connects successfully to terminal in emulator | Resolving ERR_CONNECTION_REFUSED | React Native, Expo | Test on device, proceed to device testing.
 
 ## Session Summaries
 
@@ -102,6 +103,13 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - **Completed Tasks:** Regenerated SSL certs, updated server to HTTPS, app to HTTPS URLs with SSL error handling; committed changes.
 - **Pending Items:** Verify Android SDK/JDK for local build; execute `npx expo run:android --device`; test HTTPS terminal on device.
 - **Conventions:** Aggressive logging; commit after changes; prioritize security.
-- **Next Steps:** Inspect SDK/JDK availability; proceed with local APK build; test secure connection; log results.</content>
+- **Next Steps:** Inspect SDK/JDK availability; proceed with local APK build; test secure connection; log results.
+
+### Session 5: Emulator Connection Fix and Testing
+- **Current State:** App successfully connects to terminal in emulator via HTTP on port 3000; server running, APK rebuilt and installed.
+- **Completed Tasks:** Identified and fixed app URL mismatch (HTTPS/port 8888 vs HTTP/port 3000), updated screens, rebuilt APK, confirmed working connection.
+- **Pending Items:** Test on physical device, ensure device testing succeeds.
+- **Conventions:** Aggressive logging; commit after changes; follow logging guide.
+- **Next Steps:** Proceed to device testing; log outcomes; finalize app if successful.</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
