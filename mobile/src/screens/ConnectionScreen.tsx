@@ -8,7 +8,7 @@ import { TerminalSession, SessionStatus } from '../models/TerminalSession';
 export const ConnectionScreen: React.FC = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const [serverUrl, setServerUrl] = useState('10.222.3.71:8888');
+  const [serverUrl, setServerUrl] = useState('10.0.2.2:8888');
 
   const handleConnect = () => {
     const session: TerminalSession = {
@@ -28,7 +28,7 @@ export const ConnectionScreen: React.FC = () => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Enter server URL (e.g., 10.222.3.71:8888)"
+        placeholder="Enter server URL (e.g., 10.0.2.2:8888)"
         value={serverUrl}
         onChangeText={setServerUrl}
       />
