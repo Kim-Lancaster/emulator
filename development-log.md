@@ -71,7 +71,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 11:00 | 82dca4f | Rebuild APK with port 8888 URLs | Ran expo run:android from mobile dir, build successful in 6s, APK installed on SM_N950U device | Success | APK ready for testing non-root terminal access | APK rebuild | Expo CLI | App opened on device.
 - 2025-10-16 11:15 | 749c72e | Launch Android emulator for testing | Ran expo run:android, build successful in 3m 25s, APK installed and app opened on 'test' emulator | Success | Emulator launched, app ready for connection test to https://localhost:8888 | Emulator testing | Expo CLI | User to test non-root terminal access.
 - 2025-10-16 11:30 | d7da378 | Update app for emulator networking | Changed ConnectionScreen.tsx default URL to 10.0.2.2:8888, rebuilt APK in 6s, installed on 'test' emulator | Success | APK updated for emulator host access | Networking fix | React Native | Ready for connection test.
-- 2025-10-16 13:30 | N/A | Clean up ttyd processes | Killed ttyd PIDs 1983783 (3000), 1983645 (8080), 1983597 (8888); ports now free | Success | Freed ports for new server start | Process cleanup | lsof, kill | Ready for user to start server.
+- 2025-10-16 13:30 | 1691cc3 | Clean up ttyd processes | Killed ttyd PIDs 1983783 (3000), 1983645 (8080), 1983597 (8888); ports now free | Success | Freed ports for new server start | Process cleanup | lsof, kill | Ready for user to start server.
+- 2025-10-16 14:00 | N/A | Test emulator connections and ADB reverse | Tried 10.222.3.71:3000 (ERR_CONNECTION_REFUSED), set up ADB reverse tcp:3000 tcp:3000, tested localhost:3000 (still refused), confirmed tunnels active with adb reverse --list | Failure | Tunnel set up but connection refused in app; server running, host access works | Emulator network isolation | ADB reverse, WebView | Likely WebView blocking or tunnel not effective in app.
 
 ## Session Summaries
 
