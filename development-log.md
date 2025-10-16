@@ -74,6 +74,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 13:30 | 1691cc3 | Clean up ttyd processes | Killed ttyd PIDs 1983783 (3000), 1983645 (8080), 1983597 (8888); ports now free | Success | Freed ports for new server start | Process cleanup | lsof, kill | Ready for user to start server.
 - 2025-10-16 14:00 | 9735a50 | Test emulator connections and ADB reverse | Tried 10.222.3.71:3000 (ERR_CONNECTION_REFUSED), set up ADB reverse tcp:3000 tcp:3000, tested localhost:3000 (still refused), confirmed tunnels active with adb reverse --list | Failure | Tunnel set up but connection refused in app; server running, host access works | Emulator network isolation | ADB reverse, WebView | Likely WebView blocking or tunnel not effective in app.
 - 2025-10-16 15:00 | 3d3eefc | Fix app connection settings for emulator | Updated ConnectionScreen.tsx default to 10.0.2.2:3000, changed hostUrl to http://, updated placeholder; updated TerminalScreen.tsx fallback to http://localhost:3000; rebuilt APK with npm run android | Success | App now connects successfully to terminal in emulator | Resolving ERR_CONNECTION_REFUSED | React Native, Expo | Test on device, proceed to device testing.
+- 2025-10-16 15:30 | e3f5bf7 | Commit connection fixes | Committed changes to ConnectionScreen.tsx and TerminalScreen.tsx for emulator HTTP connection on port 3000 | Success | No failures | Logging fix per development workflow | Git | Proceed to physical device testing.
+- 2025-10-16 16:00 | d4f6d71 | Update quickstart documentation | Updated quickstart.md to reflect HTTP on port 3000, APK build process, and connection URLs for emulator/device | Success | No failures | Finalizing app documentation | Git | App ready for physical device testing.
 
 ## Session Summaries
 
@@ -106,10 +108,10 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - **Next Steps:** Inspect SDK/JDK availability; proceed with local APK build; test secure connection; log results.
 
 ### Session 5: Emulator Connection Fix and Testing
-- **Current State:** App successfully connects to terminal in emulator via HTTP on port 3000; server running, APK rebuilt and installed.
-- **Completed Tasks:** Identified and fixed app URL mismatch (HTTPS/port 8888 vs HTTP/port 3000), updated screens, rebuilt APK, confirmed working connection.
-- **Pending Items:** Test on physical device, ensure device testing succeeds.
+- **Current State:** App successfully connects to terminal in emulator via HTTP on port 3000; server running, APK rebuilt and installed; quickstart updated.
+- **Completed Tasks:** Identified and fixed app URL mismatch (HTTPS/port 8888 vs HTTP/port 3000), updated screens, rebuilt APK, confirmed working connection; committed fixes; updated quickstart.md for deployment.
+- **Pending Items:** Physical device testing (ready for user to perform).
 - **Conventions:** Aggressive logging; commit after changes; follow logging guide.
-- **Next Steps:** Proceed to device testing; log outcomes; finalize app if successful.</content>
+- **Next Steps:** User to test on physical device; finalize app if successful.</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
