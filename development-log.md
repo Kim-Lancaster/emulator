@@ -61,6 +61,9 @@ This log tracks all actions, changes, and outcomes during development. Format: T
  - 2025-10-15 16:25 | N/A | Attempt HTTP server start | Ran start.sh; ttyd failed with binding error (-1 98 EADDRINUSE) on 8083 | Partial | Port appears in use but ss shows no listener; ttyd exits after error | Investigating binding failure | Changed port to 8084 in start.sh and app.
  - 2025-10-15 16:30 | N/A | Retry HTTP server on 8084 | Ran start.sh; same binding error on 8084 | Failure | Consistent binding failure despite no visible listener | Root cause: invalid -i 0.0.0.0 option | Plan: Remove -i option, default binds to all interfaces.
  - 2025-10-15 16:35 | de5dd5c | Switch to HTTP for testing | Committed changes: updated start.sh to HTTP, ConnectionScreen.tsx and TerminalScreen.tsx to http:// URLs on port 3000 | Success | Code changes for HTTP testing committed | Preparing for server start and APK rebuild | Ready to push and test.
+ - 2025-10-15 16:40 | N/A | Add cleartext traffic permission | Added "usesCleartextTraffic": true to app.json android config to allow HTTP connections on Android 9+ | Success | Permission added to enable HTTP in WebView | Rebuild APK with HTTP support | Ready for APK rebuild.
+ - 2025-10-15 16:45 | N/A | Rebuild APK with HTTP and cleartext | Executed expo run:android, built and installed debug APK on SM_N950U with HTTP URLs and cleartext permission | Success | APK installed successfully; no build errors | Testing HTTP connection on phone | Server and Metro running.
+ - 2025-10-15 16:50 | N/A | Start Metro bundler | Ran expo start --port 8082, Metro running on port 8082 | Success | Bundler active for app updates | Testing connection with running server | User to test app on phone.
 
 ## Session Summaries
 
