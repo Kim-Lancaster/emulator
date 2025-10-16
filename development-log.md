@@ -82,6 +82,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 17:10 | N/A | Rebuild APK for device | Executed npx expo run:android --device SM_N950U, build successful in 14s, APK installed on device | Success | No failures | Testing on physical device | Expo CLI, Android SDK | User tests app connection.
 - 2025-10-16 17:15 | N/A | User test on physical device | App loads, blank white screen in WebView area, disconnect button visible; after delay, ERR_CONNECTION_TIMED_OUT (code -8) | Failure | Connection timeout indicates server unreachable or binding/firewall issue | Troubleshooting connection | ttyd server, WebView | Diagnose server status and network.
 - 2025-10-16 18:00 | N/A | Allow port 3000 in firewall | Executed sudo ufw allow 3000, verified port open; server still responds on LAN IP | Success | No failures; security risks noted for trusted network | Resolving device connection timeout | UFW | User re-tests on device.
+- 2025-10-16 18:15 | N/A | User re-test on physical device | Connection successful, terminal interface loads in WebView; can execute commands; opencode.ai runs with partial functionality | Success | No failures | Validating device connection fix | ttyd, React Native WebView | Project functional on device.
 
 ## Session Summaries
 
