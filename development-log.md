@@ -115,10 +115,10 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - **Next Steps:** Inspect SDK/JDK availability; proceed with local APK build; test secure connection; log results.
 
 ### Session 5: Emulator Connection Fix and Testing
-- **Current State:** App successfully connects to terminal in emulator via HTTP on port 3000; server running, APK rebuilt and installed; quickstart updated.
-- **Completed Tasks:** Identified and fixed app URL mismatch (HTTPS/port 8888 vs HTTP/port 3000), updated screens, rebuilt APK, confirmed working connection; committed fixes; updated quickstart.md for deployment.
-- **Pending Items:** Physical device testing (ready for user to perform).
+- **Current State:** App connects successfully on both emulator and physical device via HTTP on port 3000; server running, APK rebuilt and installed; quickstart updated; firewall adjusted for device access.
+- **Completed Tasks:** Identified and fixed app URL mismatch (HTTPS/port 8888 vs HTTP/port 3000), updated screens to host LAN IP, rebuilt APK, confirmed working connection on emulator; diagnosed and fixed firewall block on port 3000; user tested on physical device - successful terminal access and command execution.
+- **Pending Items:** None; project functional.
 - **Conventions:** Aggressive logging; commit after changes; follow logging guide.
-- **Next Steps:** User to test on physical device; finalize app if successful.</content>
+- **Next Steps:** Finalize project; consider security enhancements (auth/TLS).</content>
 </xai:function_call name="bash">
 <parameter name="command">git add development-log.md
