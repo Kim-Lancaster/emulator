@@ -68,7 +68,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 09:43 | 4b42170 | Change port to 7777 and retry | Edited start.sh PORT=7777, started server; binding failed, killed processes, restarted successfully | Success | Server listening on 7777 | Avoiding port conflicts | ttyd | User tested ports.
 - 2025-10-16 10:00 | 4b42170 | User port verification | User confirmed ports 9999 and 7777 working in browser, 8080 and 3000 not running | Confirmed | Ports accessible; 8080/3000 not started | Port testing | Browser | Proceed to non-root setup.
 - 2025-10-16 10:30 | 99062bd | Update app URLs for port 8888 | Edited ConnectionScreen.tsx and TerminalScreen.tsx to use port 8888 instead of 9999 | Success | URLs updated for emulator testing | Preparing for APK rebuild | React Native | Ready to rebuild APK.
-- 2025-10-16 11:00 | N/A | Rebuild APK with port 8888 URLs | Ran expo run:android from mobile dir, build successful in 6s, APK installed on SM_N950U device | Success | APK ready for testing non-root terminal access | APK rebuild | Expo CLI | App opened on device.
+- 2025-10-16 11:00 | 82dca4f | Rebuild APK with port 8888 URLs | Ran expo run:android from mobile dir, build successful in 6s, APK installed on SM_N950U device | Success | APK ready for testing non-root terminal access | APK rebuild | Expo CLI | App opened on device.
+- 2025-10-16 11:15 | N/A | Launch Android emulator for testing | Ran expo run:android, build successful in 3m 25s, APK installed and app opened on 'test' emulator | Success | Emulator launched, app ready for connection test to https://localhost:8888 | Emulator testing | Expo CLI | User to test non-root terminal access.
 
 ## Session Summaries
 
