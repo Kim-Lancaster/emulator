@@ -8,13 +8,13 @@ import { TerminalSession, SessionStatus } from '../models/TerminalSession';
 export const ConnectionScreen: React.FC = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const [serverUrl, setServerUrl] = useState('10.0.2.2:8888');
+  const [serverUrl, setServerUrl] = useState('10.0.2.2:3000');
 
   const handleConnect = () => {
     const session: TerminalSession = {
       id: `session-${Date.now()}`,
       hostId: serverUrl.split(':')[0],
-      hostUrl: `https://${serverUrl}`,
+      hostUrl: `http://${serverUrl}`,
       status: SessionStatus.CONNECTED,
       history: [],
       createdAt: new Date(),
@@ -28,7 +28,7 @@ export const ConnectionScreen: React.FC = () => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Enter server URL (e.g., 10.0.2.2:8888)"
+        placeholder="Enter server URL (e.g., 10.0.2.2:3000)"
         value={serverUrl}
         onChangeText={setServerUrl}
       />
