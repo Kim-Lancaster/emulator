@@ -70,7 +70,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 10:30 | 99062bd | Update app URLs for port 8888 | Edited ConnectionScreen.tsx and TerminalScreen.tsx to use port 8888 instead of 9999 | Success | URLs updated for emulator testing | Preparing for APK rebuild | React Native | Ready to rebuild APK.
 - 2025-10-16 11:00 | 82dca4f | Rebuild APK with port 8888 URLs | Ran expo run:android from mobile dir, build successful in 6s, APK installed on SM_N950U device | Success | APK ready for testing non-root terminal access | APK rebuild | Expo CLI | App opened on device.
 - 2025-10-16 11:15 | 749c72e | Launch Android emulator for testing | Ran expo run:android, build successful in 3m 25s, APK installed and app opened on 'test' emulator | Success | Emulator launched, app ready for connection test to https://localhost:8888 | Emulator testing | Expo CLI | User to test non-root terminal access.
-- 2025-10-16 11:30 | N/A | Update app for emulator networking | Changed ConnectionScreen.tsx default URL to 10.0.2.2:8888, rebuilt APK in 6s, installed on 'test' emulator | Success | APK updated for emulator host access | Networking fix | React Native | Ready for connection test.
+- 2025-10-16 11:30 | d7da378 | Update app for emulator networking | Changed ConnectionScreen.tsx default URL to 10.0.2.2:8888, rebuilt APK in 6s, installed on 'test' emulator | Success | APK updated for emulator host access | Networking fix | React Native | Ready for connection test.
+- 2025-10-16 13:30 | N/A | Shut down ttyd processes | Killed ttyd PIDs 1983783 (3000), 1983645 (8080), 1983597 (8888); ports now free | Success | Freed ports for new server start | Process cleanup | lsof, kill | Ready for user to start server.
 
 ## Session Summaries
 
