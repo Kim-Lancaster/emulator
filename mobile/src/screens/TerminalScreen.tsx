@@ -16,7 +16,7 @@ export const TerminalScreen: React.FC = () => {
   const sessions = useSelector((state: RootState) => state.session.sessions);
   const activeSession = sessions.find(s => s.id === activeSessionId);
 
-  const hostUrl = activeSession?.hostUrl || 'http://localhost:3000';
+  const hostUrl = activeSession?.hostUrl || 'http://10.222.3.71:3000';
   const webviewRef = useRef<WebView>(null);
 
   const handleDisconnect = async () => {
