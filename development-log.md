@@ -77,6 +77,10 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 15:30 | e3f5bf7 | Commit connection fixes | Committed changes to ConnectionScreen.tsx and TerminalScreen.tsx for emulator HTTP connection on port 3000 | Success | No failures | Logging fix per development workflow | Git | Proceed to physical device testing.
 - 2025-10-16 16:00 | d4f6d71 | Update quickstart documentation | Updated quickstart.md to reflect HTTP on port 3000, APK build process, and connection URLs for emulator/device | Success | No failures | Finalizing app documentation | Git | App ready for physical device testing.
 - 2025-10-16 16:30 | 41ad378 | Push to remote repository | Verified no secrets or sensitive files (removed .pem certs), pushed branch 001-mobile-terminal-access to GitHub | Success | No failures | Completing project deployment | Git, GitHub | Project finalized and deployed.
+- 2025-10-16 17:00 | N/A | Determine host LAN IP | Ran hostname -I and ip route, identified 10.222.3.71 as active LAN IP on wlp59s0 | Success | No failures | Preparing for physical device testing | System networking | Update app code with IP.
+- 2025-10-16 17:05 | de786e8 | Update app code for device IP | Changed ConnectionScreen default serverUrl to '10.222.3.71:3000', updated placeholder; changed TerminalScreen fallback to 'http://10.222.3.71:3000' | Success | No failures | Enabling device connection to host server | React Native | Rebuild APK for testing.
+- 2025-10-16 17:10 | N/A | Rebuild APK for device | Executed npx expo run:android --device SM_N950U, build successful in 14s, APK installed on device | Success | No failures | Testing on physical device | Expo CLI, Android SDK | User tests app connection.
+- 2025-10-16 17:15 | N/A | User test on physical device | App loads, blank white screen in WebView area, disconnect button visible; after delay, ERR_CONNECTION_TIMED_OUT (code -8) | Failure | Connection timeout indicates server unreachable or binding/firewall issue | Troubleshooting connection | ttyd server, WebView | Diagnose server status and network.
 
 ## Session Summaries
 
