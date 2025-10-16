@@ -64,9 +64,10 @@ This log tracks all actions, changes, and outcomes during development. Format: T
  - 2025-10-15 16:40 | N/A | Add cleartext traffic permission | Added "usesCleartextTraffic": true to app.json android config to allow HTTP connections on Android 9+ | Success | Permission added to enable HTTP in WebView | Rebuild APK with HTTP support | Ready for APK rebuild.
  - 2025-10-15 16:45 | N/A | Rebuild APK with HTTP and cleartext | Executed expo run:android, built and installed debug APK on SM_N950U with HTTP URLs and cleartext permission | Success | APK installed successfully; no build errors | Testing HTTP connection on phone | Server and Metro running.
  - 2025-10-15 16:50 | N/A | Start Metro bundler | Ran expo start --port 8082, Metro running on port 8082 | Success | Bundler active for app updates | Testing connection with running server | User to test app on phone.
-- 2025-10-16 09:41 | N/A | Troubleshoot server binding on port 9999 | Killed ttyd process (PID 1924816), restarted server with sudo; binding failed due to EADDRINUSE | Partial | Port in use by previous instance; resolved by killing | Resuming from summary | ttyd | Retried start.
-- 2025-10-16 09:43 | N/A | Change port to 7777 and retry | Edited start.sh PORT=7777, started server; binding failed, killed processes, restarted successfully | Success | Server listening on 7777 | Avoiding port conflicts | ttyd | User tested ports.
-- 2025-10-16 10:00 | N/A | User port verification | User confirmed ports 9999 and 7777 working in browser, 8080 and 3000 not running | Confirmed | Ports accessible; 8080/3000 not started | Port testing | Browser | Proceed to non-root setup.
+- 2025-10-16 09:41 | 4b42170 | Troubleshoot server binding on port 9999 | Killed ttyd process (PID 1924816), restarted server with sudo; binding failed due to EADDRINUSE | Partial | Port in use by previous instance; resolved by killing | Resuming from summary | ttyd | Retried start.
+- 2025-10-16 09:43 | 4b42170 | Change port to 7777 and retry | Edited start.sh PORT=7777, started server; binding failed, killed processes, restarted successfully | Success | Server listening on 7777 | Avoiding port conflicts | ttyd | User tested ports.
+- 2025-10-16 10:00 | 4b42170 | User port verification | User confirmed ports 9999 and 7777 working in browser, 8080 and 3000 not running | Confirmed | Ports accessible; 8080/3000 not started | Port testing | Browser | Proceed to non-root setup.
+- 2025-10-16 10:30 | N/A | Update app URLs for port 8888 | Edited ConnectionScreen.tsx and TerminalScreen.tsx to use port 8888 instead of 9999 | Success | URLs updated for emulator testing | Preparing for APK rebuild | React Native | Ready to rebuild APK.
 
 ## Session Summaries
 

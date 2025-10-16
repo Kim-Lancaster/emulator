@@ -16,7 +16,7 @@ export const TerminalScreen: React.FC = () => {
   const sessions = useSelector((state: RootState) => state.session.sessions);
   const activeSession = sessions.find(s => s.id === activeSessionId);
 
-  const hostUrl = activeSession?.hostUrl || 'http://localhost:3000';
+  const hostUrl = activeSession?.hostUrl || 'https://localhost:8888';
   const webviewRef = useRef<WebView>(null);
 
   const handleDisconnect = async () => {
@@ -38,6 +38,7 @@ export const TerminalScreen: React.FC = () => {
           style={styles.webview}
           javaScriptEnabled={true}
           domStorageEnabled={true}
+          ignoreSslError={true}
           onError={(syntheticEvent) => {
             const { nativeEvent } = syntheticEvent;
             console.warn('WebView error: ', nativeEvent);
