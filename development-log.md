@@ -83,6 +83,8 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 17:15 | N/A | User test on physical device | App loads, blank white screen in WebView area, disconnect button visible; after delay, ERR_CONNECTION_TIMED_OUT (code -8) | Failure | Connection timeout indicates server unreachable or binding/firewall issue | Troubleshooting connection | ttyd server, WebView | Diagnose server status and network.
 - 2025-10-16 18:00 | N/A | Allow port 3000 in firewall | Executed sudo ufw allow 3000, verified port open; server still responds on LAN IP | Success | No failures; security risks noted for trusted network | Resolving device connection timeout | UFW | User re-tests on device.
 - 2025-10-16 18:15 | N/A | User re-test on physical device | Connection successful, terminal interface loads in WebView; can execute commands; opencode.ai runs with partial functionality | Success | No failures | Validating device connection fix | ttyd, React Native WebView | Project functional on device.
+- 2025-10-16 19:00 | N/A | Diagnose typing issues | Isolated VirtualKeyboard by disabling; revealed WebView input rendering problems (text disappears on space/enter, backspace moves cursor but no reveal) | Partial | VirtualKeyboard not sole cause; WebView focus/rendering issue | Isolating typing problems | React Native WebView | Re-enabled VirtualKeyboard, added WebView props for focus/input.
+- 2025-10-16 19:05 | c13f994 | Fix WebView input handling | Re-enabled VirtualKeyboard; added keyboardDisplayRequiresUserAction={false}, injectedJavaScript for auto-focus, onLoadEnd for focus injection in TerminalScreen.tsx | Success | No failures | Improving WebView input and focus | React Native WebView | Rebuilt APK for testing.
 
 ## Session Summaries
 
