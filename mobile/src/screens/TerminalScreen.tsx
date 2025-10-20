@@ -59,9 +59,11 @@ export const TerminalScreen: React.FC = () => {
       <TouchableOpacity style={styles.disconnectButton} onPress={handleDisconnect}>
         <Text style={styles.disconnectText}>Disconnect</Text>
       </TouchableOpacity>
-       {Platform.OS !== 'web' && (
-         <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
-       )}
+        {Platform.OS !== 'web' && (
+          <View style={{alignSelf: 'flex-start'}}>
+            <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
+          </View>
+        )}
     </View>
   );
 };
