@@ -85,6 +85,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 18:15 | N/A | User re-test on physical device | Connection successful, terminal interface loads in WebView; can execute commands; opencode.ai runs with partial functionality | Success | No failures | Validating device connection fix | ttyd, React Native WebView | Project functional on device.
 - 2025-10-16 19:00 | N/A | Diagnose typing issues | Isolated VirtualKeyboard by disabling; revealed WebView input rendering problems (text disappears on space/enter, backspace moves cursor but no reveal) | Partial | VirtualKeyboard not sole cause; WebView focus/rendering issue | Isolating typing problems | React Native WebView | Re-enabled VirtualKeyboard, added WebView props for focus/input.
 - 2025-10-16 19:05 | c13f994 | Fix WebView input handling | Re-enabled VirtualKeyboard; added keyboardDisplayRequiresUserAction={false}, injectedJavaScript for auto-focus, onLoadEnd for focus injection in TerminalScreen.tsx | Success | No failures | Improving WebView input and focus | React Native WebView | Rebuilt APK for testing.
+- 2025-10-16 19:10 | ddff6b8 | Add VirtualKeyboard logging | Added console.warn logs to VirtualKeyboard.tsx scripts for debugging key injections | Success | No failures | Debugging VirtualKeyboard functionality | React Native WebView | Rebuilt APK; user to test keys and check ADB logs.
 
 ## Session Summaries
 
