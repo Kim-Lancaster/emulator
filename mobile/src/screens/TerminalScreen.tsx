@@ -60,7 +60,7 @@ export const TerminalScreen: React.FC = () => {
         <Text style={styles.disconnectText}>Disconnect</Text>
       </TouchableOpacity>
         {Platform.OS !== 'web' && (
-          <View style={{alignSelf: 'flex-start'}}>
+          <View style={{alignSelf: 'flex-start', flex: 0}}>
             <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
           </View>
         )}
