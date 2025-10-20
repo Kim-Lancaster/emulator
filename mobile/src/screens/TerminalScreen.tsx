@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, Platform, Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { WebView } from 'react-native-webview';
@@ -14,6 +14,21 @@ export const TerminalScreen: React.FC = () => {
   const dispatch = useDispatch();
   const activeSessionId = useSelector((state: RootState) => state.session.activeSessionId);
   const sessions = useSelector((state: RootState) => state.session.sessions);
+  const [keyboardHeight, setKeyboardHeight] = useState(0);
+
+  useEffect(() => {
+    const showListener = Keyboard.addListener('keyboardDidShow', (e) => {
+      setKeyboardHeight(e.endCoordinates.height);
+    });
+    const hideListener = Keyboard.addListener('keyboardDidHide', () => {
+      setKeyboardHeight(0);
+    });
+
+    return () => {
+      showListener.remove();
+      hideListener.remove();
+    };
+  }, []);
   const activeSession = sessions.find(s => s.id === activeSessionId);
 
   const hostUrl = activeSession?.hostUrl || 'http://10.222.3.71:3000';
@@ -60,7 +75,7 @@ export const TerminalScreen: React.FC = () => {
         <Text style={styles.disconnectText}>Disconnect</Text>
       </TouchableOpacity>
         {Platform.OS !== 'web' && (
-          <View style={{alignSelf: 'flex-start', height: '20%', alignItems: 'center'}}>
+          <View style={keyboardHeight > 0 ? {alignSelf: 'flex-start', flex: 0, height: keyboardHeight, marginBottom: keyboardHeight, alignItems: 'center'} : {alignSelf: 'flex-start', height: '10%', alignItems: 'center'}}>
             <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
           </View>
         )}
