@@ -45,16 +45,18 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) 
 
 const styles = StyleSheet.create({
   container: {
+    height: 50,
     backgroundColor: '#f0f0f0',
   },
   scrollContent: {
     flexDirection: 'row',
-    padding: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
   },
   key: {
-    width: 80,
-    height: 40,
-    margin: 5,
+    width: 70,
+    height: 35,
+    margin: 3,
     backgroundColor: '#fff',
     borderRadius: 5,
     justifyContent: 'center',
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
   },
   keyText: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'bold',
   },
 });
