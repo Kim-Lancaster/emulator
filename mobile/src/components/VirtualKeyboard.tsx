@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface VirtualKeyboardProps {
   onKeyPress: (script: string) => void;
 }
 
 export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) => {
+  const insets = useSafeAreaInsets();
+
   const keys = [
      { label: 'Esc', script: `console.warn('VirtualKeyboard: Injecting Esc'); document.querySelector('.xterm-helper-textarea').dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', keyCode: 27, which: 27, bubbles: true}));` },
      { label: 'Tab', script: `console.warn('VirtualKeyboard: Injecting Tab'); document.querySelector('.xterm-helper-textarea').dispatchEvent(new KeyboardEvent('keydown', {key: 'Tab', keyCode: 9, which: 9, bubbles: true}));` },
@@ -21,7 +24,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) 
   ];
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginBottom: insets.bottom }]}>
       {keys.map((key) => (
         <TouchableOpacity
           key={key.label}
