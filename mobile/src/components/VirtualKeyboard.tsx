@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { ScrollView, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface VirtualKeyboardProps {
@@ -24,7 +24,12 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) 
   ];
 
   return (
-    <View style={[styles.container, { marginBottom: insets.bottom }]}>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={[styles.container, { marginBottom: insets.bottom }]}
+      contentContainerStyle={styles.scrollContent}
+    >
       {keys.map((key) => (
         <TouchableOpacity
           key={key.label}
@@ -34,16 +39,17 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) 
           <Text style={styles.keyText}>{key.label}</Text>
         </TouchableOpacity>
       ))}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    padding: 10,
     backgroundColor: '#f0f0f0',
+  },
+  scrollContent: {
+    flexDirection: 'row',
+    padding: 10,
   },
   key: {
     width: 80,
