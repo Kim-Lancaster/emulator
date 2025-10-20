@@ -39,6 +39,11 @@ export const TerminalScreen: React.FC = () => {
           javaScriptEnabled={true}
           domStorageEnabled={true}
           ignoreSslError={true}
+          keyboardDisplayRequiresUserAction={false}
+          injectedJavaScript={`setTimeout(() => { document.querySelector('input, textarea, [contenteditable]')?.focus(); }, 1000);`}
+          onLoadEnd={() => {
+            webviewRef.current?.injectJavaScript(`document.querySelector('input, textarea, [contenteditable]')?.focus();`);
+          }}
           onError={(syntheticEvent) => {
             const { nativeEvent } = syntheticEvent;
             console.warn('WebView error: ', nativeEvent);
@@ -54,9 +59,9 @@ export const TerminalScreen: React.FC = () => {
       <TouchableOpacity style={styles.disconnectButton} onPress={handleDisconnect}>
         <Text style={styles.disconnectText}>Disconnect</Text>
       </TouchableOpacity>
-      {Platform.OS !== 'web' && (
-        <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
-      )}
+       {Platform.OS !== 'web' && (
+         <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
+       )}
     </View>
   );
 };
