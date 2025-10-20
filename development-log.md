@@ -87,6 +87,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 19:05 | c13f994 | Fix WebView input handling | Re-enabled VirtualKeyboard; added keyboardDisplayRequiresUserAction={false}, injectedJavaScript for auto-focus, onLoadEnd for focus injection in TerminalScreen.tsx | Success | No failures | Improving WebView input and focus | React Native WebView | Rebuilt APK for testing.
 - 2025-10-16 19:10 | ddff6b8 | Add VirtualKeyboard logging | Added console.warn logs to VirtualKeyboard.tsx scripts for debugging key injections | Success | No failures | Debugging VirtualKeyboard functionality | React Native WebView | Rebuilt APK; user to test keys and check ADB logs.
 - 2025-10-20 10:00 | 3666c7b | Update VirtualKeyboard targeting | Changed VirtualKeyboard event dispatch from document to .xterm element with bubbles: true for proper xterm.js event handling | Success | No failures | Improving VirtualKeyboard key injection accuracy | React Native WebView, xterm.js | Rebuild APK and test VirtualKeyboard functionality on device.
+- 2025-10-20 11:00 | e9fc392 | Test VirtualKeyboard on device | VirtualKeyboard keys now respond correctly in terminal (Esc clears line, arrows navigate, Ctrl+C interrupts); confirmed via ADB logs and user feedback | Success | No failures | Validating VirtualKeyboard fix | React Native WebView, xterm.js | Address Android navigation bar blocking bottom keys.
 
 ## Session Summaries
 
