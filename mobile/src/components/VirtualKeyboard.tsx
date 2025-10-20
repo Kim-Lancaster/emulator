@@ -1,5 +1,5 @@
-import React from 'react';
-import { ScrollView, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { ScrollView, TouchableOpacity, Text, StyleSheet, Keyboard } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface VirtualKeyboardProps {
@@ -8,6 +8,21 @@ interface VirtualKeyboardProps {
 
 export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) => {
   const insets = useSafeAreaInsets();
+  const [keyboardHeight, setKeyboardHeight] = useState(0);
+
+  useEffect(() => {
+    const showListener = Keyboard.addListener('keyboardDidShow', (e) => {
+      setKeyboardHeight(e.endCoordinates.height);
+    });
+    const hideListener = Keyboard.addListener('keyboardDidHide', () => {
+      setKeyboardHeight(0);
+    });
+
+    return () => {
+      showListener.remove();
+      hideListener.remove();
+    };
+  }, []);
 
   const keys = [
      { label: 'Esc', script: `console.warn('VirtualKeyboard: Injecting Esc'); document.querySelector('.xterm-helper-textarea').dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', keyCode: 27, which: 27, bubbles: true}));` },
@@ -27,7 +42,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) 
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      style={[styles.container, { marginBottom: insets.bottom, height: 50 }]}
+      style={[styles.container, { marginBottom: insets.bottom + keyboardHeight, height: keyboardHeight > 0 ? keyboardHeight : 50 }]}
       contentContainerStyle={styles.scrollContent}
     >
       {keys.map((key) => (
