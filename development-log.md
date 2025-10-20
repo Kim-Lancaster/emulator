@@ -88,6 +88,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 19:10 | ddff6b8 | Add VirtualKeyboard logging | Added console.warn logs to VirtualKeyboard.tsx scripts for debugging key injections | Success | No failures | Debugging VirtualKeyboard functionality | React Native WebView | Rebuilt APK; user to test keys and check ADB logs.
 - 2025-10-20 10:00 | 3666c7b | Update VirtualKeyboard targeting | Changed VirtualKeyboard event dispatch from document to .xterm element with bubbles: true for proper xterm.js event handling | Success | No failures | Improving VirtualKeyboard key injection accuracy | React Native WebView, xterm.js | Rebuild APK and test VirtualKeyboard functionality on device.
 - 2025-10-20 11:00 | e9fc392 | Test VirtualKeyboard on device | VirtualKeyboard keys now respond correctly in terminal (Esc clears line, arrows navigate, Ctrl+C interrupts); confirmed via ADB logs and user feedback | Success | No failures | Validating VirtualKeyboard fix | React Native WebView, xterm.js | Address Android navigation bar blocking bottom keys.
+- 2025-10-20 12:00 | 94a4e81 | Implement dynamic VirtualKeyboard height | Added Keyboard listeners to adjust VirtualKeyboard height and margin based on system keyboard visibility; compact (50px) when hidden, expands to keyboard height when shown for optimal positioning | Success | No failures | Improving UI responsiveness | React Native Keyboard API | Rebuild APK and test dynamic sizing.
 
 ## Session Summaries
 
