@@ -42,7 +42,7 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) 
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      style={[styles.container, { marginBottom: insets.bottom + (keyboardHeight > 0 ? keyboardHeight : 0) }]}
+      style={[styles.container, { marginBottom: keyboardHeight > 0 ? keyboardHeight : insets.bottom }]}
       contentContainerStyle={styles.scrollContent}
     >
       {keys.map((key) => (
