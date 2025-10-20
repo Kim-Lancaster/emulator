@@ -60,7 +60,6 @@ export const VirtualKeyboard: React.FC<VirtualKeyboardProps> = ({ onKeyPress }) 
 
 const styles = StyleSheet.create({
   container: {
-    height: 50,
     backgroundColor: '#f0f0f0',
   },
   scrollContent: {
