@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Platform, Keyboard } from 'react-native';
+ import React, { useRef, useState, useEffect } from 'react';
+import { View, StyleSheet, TouchableOpacity, Text, Platform, Keyboard, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { WebView } from 'react-native-webview';
 import { RootState } from '../store/store';
-import { updateSession } from '../store/sessionSlice';
+import { updateSession, setActiveSession } from '../store/sessionSlice';
 import { ConnectionService } from '../services/ConnectionService';
 import { SessionService } from '../services/SessionService';
 import { VirtualKeyboard } from '../components/VirtualKeyboard';
@@ -46,39 +46,43 @@ export const TerminalScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      {Platform.OS !== 'web' ? (
-        <WebView
-          ref={webviewRef}
-          source={{ uri: hostUrl }}
-          style={styles.webview}
-          javaScriptEnabled={true}
-          domStorageEnabled={true}
-          ignoreSslError={true}
-          keyboardDisplayRequiresUserAction={false}
-          injectedJavaScript={`setTimeout(() => { document.querySelector('input, textarea, [contenteditable]')?.focus(); }, 1000);`}
-          onLoadEnd={() => {
-            webviewRef.current?.injectJavaScript(`document.querySelector('input, textarea, [contenteditable]')?.focus();`);
-          }}
-          onError={(syntheticEvent) => {
-            const { nativeEvent } = syntheticEvent;
-            console.warn('WebView error: ', nativeEvent);
-          }}
-        />
-      ) : (
-        <iframe
-          src={hostUrl}
-          style={{ flex: 1, border: 'none' }}
-          title="Terminal"
-        />
-      )}
-      <TouchableOpacity style={styles.disconnectButton} onPress={handleDisconnect}>
-        <Text style={styles.disconnectText}>Disconnect</Text>
-      </TouchableOpacity>
-        {Platform.OS !== 'web' && (
-          <View style={keyboardHeight > 0 ? {alignSelf: 'flex-start', flex: 0, height: keyboardHeight, marginBottom: keyboardHeight, alignItems: 'center'} : {alignSelf: 'flex-start', height: '10%', alignItems: 'center'}}>
-            <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
-          </View>
+      <View style={{ position: 'absolute', top: 10, right: 10, width: 20, height: 20, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center', borderRadius: 5, zIndex: 1 }}>
+        <TouchableOpacity onPress={() => dispatch(setActiveSession(null))} style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ color: 'white', fontSize: 12 }}>X</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={{ flex: 1 }}>
+        {Platform.OS !== 'web' ? (
+          <WebView
+            ref={webviewRef}
+            source={{ uri: hostUrl }}
+            style={styles.webview}
+            javaScriptEnabled={true}
+            domStorageEnabled={true}
+            ignoreSslError={true}
+            keyboardDisplayRequiresUserAction={false}
+            injectedJavaScript={`setTimeout(() => { document.querySelector('input, textarea, [contenteditable]')?.focus(); }, 1000);`}
+            onLoadEnd={() => {
+              webviewRef.current?.injectJavaScript(`document.querySelector('input, textarea, [contenteditable]')?.focus();`);
+            }}
+            onError={(syntheticEvent) => {
+              const { nativeEvent } = syntheticEvent;
+              console.warn('WebView error: ', nativeEvent);
+            }}
+          />
+        ) : (
+          <iframe
+            src={hostUrl}
+            style={styles.webview}
+          />
         )}
+      </View>
+      {Platform.OS !== 'web' && (
+        <View style={{ height: '13%', alignItems: 'center' }}>
+          <VirtualKeyboard onKeyPress={(script) => webviewRef.current?.injectJavaScript(script)} />
+        </View>
+      )}
+      <View style={{ height: keyboardHeight }} />
     </View>
   );
 };
