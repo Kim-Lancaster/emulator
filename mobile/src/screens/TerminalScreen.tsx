@@ -47,7 +47,7 @@ export const TerminalScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={{ position: 'absolute', top: 10, right: 10, width: 20, height: 20, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center', borderRadius: 5, zIndex: 1 }}>
-        <TouchableOpacity onPress={() => dispatch(setActiveSession(null))} style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+        <TouchableOpacity onPress={() => { dispatch(setActiveSession(null)); navigation.goBack(); }} style={{ width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
           <Text style={{ color: 'white', fontSize: 12 }}>X</Text>
         </TouchableOpacity>
       </View>
