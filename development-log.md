@@ -74,6 +74,7 @@ This log tracks all actions, changes, and outcomes during development. Format: T
 - 2025-10-16 13:30 | 1691cc3 | Clean up ttyd processes | Killed ttyd PIDs 1983783 (3000), 1983645 (8080), 1983597 (8888); ports now free | Success | Freed ports for new server start | Process cleanup | lsof, kill | Ready for user to start server.
 - 2025-10-16 14:00 | 9735a50 | Test emulator connections and ADB reverse | Tried 10.222.3.71:3000 (ERR_CONNECTION_REFUSED), set up ADB reverse tcp:3000 tcp:3000, tested localhost:3000 (still refused), confirmed tunnels active with adb reverse --list | Failure | Tunnel set up but connection refused in app; server running, host access works | Emulator network isolation | ADB reverse, WebView | Likely WebView blocking or tunnel not effective in app.
 - 2025-10-16 15:00 | 3d3eefc | Fix app connection settings for emulator | Updated ConnectionScreen.tsx default to 10.0.2.2:3000, changed hostUrl to http://, updated placeholder; updated TerminalScreen.tsx fallback to http://localhost:3000; rebuilt APK with npm run android | Success | App now connects successfully to terminal in emulator | Resolving ERR_CONNECTION_REFUSED | React Native, Expo | Test on device, proceed to device testing.
+- 2025-10-24 12:00 | d4f6d71 | Rollback to Oct 16 commit | Reset to d4f6d71 for last known HTTP functionality; reinstalled dependencies; rebuilt APK | In Progress | Build running; test app on device | Attempting to restore working HTTP state | Git, npm, Expo | Monitor build completion and test connection.
 
 ## Session Summaries
 
